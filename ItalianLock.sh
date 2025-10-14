@@ -10,7 +10,7 @@ do
 	size="$(wc -l $file | cut -d " " -f 1)"
 	rnd="$(( $RANDOM % $size + 1 ))"
 	italian_word="$( cat $file | head -n $rnd | tail -n 1| cut -f 1 )"
-	english_word="$( cat $file | head -n $rnd | tail -n 1| cut -f 2 )"
+	english_word="$( cat $file | head -n $rnd | tail -n 1| cut -f 2 | sed s:[[:blank:]]*$::g)"
 	echo ""
 	echo "Risposte giuste: "$good
 	echo -n "Come si dice "
@@ -18,7 +18,7 @@ do
 	echo -n ": "
 	read answer
 	echo ""
-	processed_answer="$(echo -e $answer | tr '[:upper:]' '[:lower:]' | sed s:^[[:blank:]]*::g | sed s:[[:blank:]]*::g)"
+	processed_answer="$(echo -e $answer | tr '[:upper:]' '[:lower:]' | sed s:^[[:blank:]]*::g | sed s:[[:blank:]]*$::g)"
 	processed_right_answer="$(echo -e $italian_word | tr '[:upper:]' '[:lower:]' | sed s:^[[:blank:]]*::g | sed s:[[:blank:]]*::g)"
 	if [[ "$processed_answer" == "$processed_right_answer" ]]
 	then
