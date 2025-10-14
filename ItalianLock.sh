@@ -37,8 +37,9 @@ do
 			sleep 1
 			echo "Bastardo!"
 			sleep 1
-			exit 0
+			exit 1
 		fi
 	fi
 done
 echo "Grazie mille :)"
+exit 0
