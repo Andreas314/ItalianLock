@@ -2,20 +2,19 @@
 source stereotype.sh
 echo "Benvenuta!"
 echo "Traduci cinque parole, per favore:"
-file="pokus.txt"
+file="List.txt"
 good=0
 bad=0
 while [[ $good -lt 5 ]]
 do
 	size="$(wc -l $file | cut -d " " -f 1)"
 	rnd="$(( $RANDOM % $size + 1 ))"
-	words="$( cat $file | head -n $rnd | tail -n 1)"
-	italian_word="$( echo -e $words | tr -s " " | cut -d " " -f 1 )"
-	english_word="$( echo -e $words | tr -s " " | cut -d " " -f 2 )"
+	italian_word="$( cat $file | head -n $rnd | tail -n 1| cut -f 1 )"
+	english_word="$( cat $file | head -n $rnd | tail -n 1| cut -f 2 )"
 	echo ""
 	echo "Risposte giuste: "$good
 	echo -n "Come si dice "
-	echo -n "$english_word"
+	echo -n "'$english_word'"
 	echo -n ": "
 	read answer
 	echo ""
