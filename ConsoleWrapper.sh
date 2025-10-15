@@ -2,7 +2,7 @@
 cd "$(dirname "$0")"
 ./ItalianLock.sh
 prog_exit=$?
-cd - &> \devnull
+cd ~
 
 # Close terminal only if interrupted
 if [[ $prog_exit -ne 0 ]]; then
