@@ -144,7 +144,8 @@ PIZZA	pizza
 PORTOGHESE	Portuguese
 PROSCIUTTO	ham 
 PRONTO	ready 
-PRONTO	hello? 
+PRONTO	hello?
+PORTATA	capacity
 QUESTO	this
 QUANTI	how many
 QUELLO	that
