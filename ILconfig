@@ -1,0 +1,50 @@
+#!/bin/bash
+dir="Lists"
+position="$(dirname "$0")"
+case $1 in
+ help | "")
+	 echo "list_av"
+	 echo "list_change LISTNAME"
+	 echo "list_add LISTNAME ENGLISH ITALIAN"
+	 echo "list_remove LISTNAME ITALIAN"
+	 exit 0
+	;;
+ list_av)
+	ls "$position/$dir"
+	exit 0
+  	;;
+
+ list_change)
+ 	name="$2"
+	if [[ ! -f "$position/$dir/$name" ]]
+	then
+		echo "Error: $name not found!"
+		exit 1
+	fi
+ 	sed -E -i "s/^file=.+/file=\"$dir\/$name\"/" "$position/ItalianLock.sh"
+	exit 0
+  	;;
+ list_add)
+ 	 name="$2"
+	 english="$(echo $3 | tr 'A-Z' 'a-z')"
+	 italian="$(echo $4 | tr 'a-zàèéìòù' 'A-ZÀÈÉÌÒÙ')"
+	 echo "$italian	$english" >> "$position/$dir/$name"
+	 exit 0
+	 ;;
+ list_remove)
+	 name="$2"
+	 italian="$(echo $3 | tr 'a-zàèéìòù' 'A-ZÀÈÉÌÒÙ')"
+	 count="$(grep $italian $position/$dir/$name | wc -l)"
+	 if [[ $count -eq 0 ]]
+	 then
+		 echo "Warning: $italian not found!"
+		 exit 1
+	 fi
+	 sed -i -E "/^$italian/Id" "$position/$dir/$name"
+	 exit 0
+	 ;;
+esac
+echo "Error: keyword $1 not recognized!"
+ exit 1
+	 
+
