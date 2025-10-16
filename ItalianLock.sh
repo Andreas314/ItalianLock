@@ -2,7 +2,7 @@
 source stereotype.sh
 echo "Benvenuta!"
 echo "Traduci cinque parole, per favore:"
-file="List.txt"
+file="Lists/Unit1.txt"
 good=0
 bad=0
 while [[ $good -lt 5 ]]
