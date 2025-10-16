@@ -35,10 +35,7 @@ Perfect for language learners who want to reinforce their vocabulary while keepi
 ## 🚀 Usage
 
 ### Lock your terminal
-To start the lock challenge:
-```bash
-ItalianLock
-```
+To start the lock challenge, simply open the terminal after the installation.\
 You will be prompted with **five English words**, and you must enter the correct **Italian translations** to unlock the terminal.
 
 ---
