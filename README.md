@@ -9,6 +9,7 @@ Perfect for language learners who want to reinforce their vocabulary while keepi
 ## 🧩 Features
 
 - Locks your Linux terminal until you successfully translate **5 random Italian words**.
+- Alternatively you can also switch mode to **conjugate a regular verb**.
 - Uses configurable vocabulary lists.
 - Supports easy management of vocabulary lists via the companion tool **`ILconfig`**.
 - Lightweight, terminal-based, and fun to use!
@@ -43,7 +44,12 @@ You will be prompted with **five English words**, and you must enter the correct
 ## 🧠 Configuring Vocabulary Lists with ILconfig
 
 The `ILconfig` program lets you manage your vocabulary lists for ItalianLock.
-
+### Switch Between Vocabulary And Conjugation
+```bash
+ILconfig switch MODE
+```
+MODE=0 Vocabulary translation\
+MODE=1 Verb conjugation
 ### List Available Vocabulary Lists
 ```bash
 ILconfig list_av
