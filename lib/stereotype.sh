@@ -1,0 +1,9 @@
+cat <<'ESPRESSO'
+          ( (
+           ) )
+        ........
+        |      |]
+        \      /
+         `----'
+        BENVENUTA!
+ESPRESSO
