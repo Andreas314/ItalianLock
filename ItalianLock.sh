@@ -18,8 +18,8 @@ do
 	echo -n ": "
 	read answer
 	echo ""
-	processed_answer="$(echo -e $answer | tr '[:upper:]' '[:lower:]' | sed s:^[[:blank:]]*::g | sed s:[[:blank:]]*$::g)"
-	processed_right_answer="$(echo -e $italian_word | tr '[:upper:]' '[:lower:]' | sed s:^[[:blank:]]*::g | sed s:[[:blank:]]*::g)"
+	processed_answer="$(echo -e $answer | tr '[:upper:]' '[:lower:]' | sed s:^[[:blank:]]*::g | sed s:[[:blank:]]*$::g|tr 'ÀÈÉÌÒÙ'  'àèéìòù')"
+	processed_right_answer="$(echo -e $italian_word | tr '[:upper:]' '[:lower:]' | sed s:^[[:blank:]]*::g | sed s:[[:blank:]]*::g| tr 'ÀÈÉÌÒÙ' 'àèéìòù')"
 	if [[ "$processed_answer" == "$processed_right_answer" ]]
 	then
 		good=$(( $good + 1 ))
