@@ -1,14 +1,25 @@
 #!/bin/bash
 dir="Lists"
-position="$(dirname "$0")/.."
+position="$(dirname "$0")/../lib"
 case $1 in
  help | "")
+	 echo "switch NUMBER"
 	 echo "list_av"
 	 echo "list_change LISTNAME"
 	 echo "list_add LISTNAME ENGLISH ITALIAN"
 	 echo "list_remove LISTNAME ITALIAN"
 	 exit 0
 	;;
+ switch)
+	 re='^[0-9]+$' 
+	 if [[ $2 -gt 1 ]] || ! [[ $2 =~ $re ]]
+	 then
+		 echo "Error: Not a valid mode number!"
+		 exit 1
+	 fi
+	 sed -i -E "s:mode=.+:mode=$2:" $position/ItalianLock.sh
+	 exit 0
+	 ;;
  list_av)
 	ls "$position/$dir"
 	exit 0
