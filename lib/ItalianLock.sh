@@ -1,17 +1,15 @@
 #!/bin/bash
 source lib/stereotype.sh
-echo "Benvenuta!"
-echo "Traduci cinque parole, per favore:"
 file="Lists/Unit1.txt"
 good=0
 bad=0
-mode="Verbs"
-#mode="Verbs"
-if [[ $mode == "Words" ]]
+mode=0
+#mode=0
+if [[ $mode == "0" ]]
 then
 	source lib/words.sh
 fi
-if [[ $mode == "Verbs" ]]
+if [[ $mode == "1" ]]
 then
 	source lib/verbs.sh
 fi

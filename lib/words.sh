@@ -1,3 +1,4 @@
+echo "Traduci cinque parole, per favore:"
 while [[ $good -lt 5 ]]
 do
 	size="$(wc -l $file | cut -d " " -f 1)"
