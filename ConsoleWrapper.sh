@@ -1,6 +1,6 @@
 #!/bin/bash
 cd "$(dirname "$0")"
-./ItalianLock.sh
+./lib/ItalianLock.sh
 prog_exit=$?
 cd ~
 
